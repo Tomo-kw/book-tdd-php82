@@ -6,14 +6,14 @@ namespace Money;
 
 class Dollar
 {
-    public int $amount;
-    public function __construct(int $amount)
+    public function __construct(
+        public int $amount
+    )
     {
-        $this->amount = $amount;
     }
 
-    public function times(int $multiplier): void
+    public function times(int $multiplier): self
     {
-        $this->amount *= $multiplier;
+        return new self($this->amount * $multiplier);
     }
 }

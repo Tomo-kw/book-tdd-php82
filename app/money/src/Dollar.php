@@ -7,7 +7,7 @@ namespace Money;
 class Dollar
 {
     public function __construct(
-        public int $amount
+        private readonly int $amount
     )
     {
     }

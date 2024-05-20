@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Money;
 
 use Money\Dollar;
+use Money\Franc;
 use PHPUnit\Framework\TestCase;
 
 final class MoneyTest extends TestCase

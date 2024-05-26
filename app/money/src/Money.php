@@ -20,12 +20,12 @@ abstract class Money
 
     public static function dollar(int $amount): self
     {
-        return new Dollar($amount);
+        return new Dollar($amount, 'USD');
     }
 
     public static function franc(int $amount): self
     {
-        return new Franc($amount);
+        return new Franc($amount, 'CHF');
     }
 
     public function currency(): string

@@ -10,6 +10,8 @@ abstract class Money
 
     abstract public function times(int $multiplier): self;
 
+    abstract public function currency(): string;
+
     public function equals(Money $object): bool
     {
         return $this->amount === $object->amount

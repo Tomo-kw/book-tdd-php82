@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\Money;
 
-use Money\Dollar;
 use Money\Franc;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
@@ -38,8 +37,8 @@ final class MoneyTest extends TestCase
 
     public function testCurrency()
     {
-        $this->assertSame('USD',Money::dollar(1)->currency());
-        $this->assertSame('CHF',Money::franc(1)->currency());
+        $this->assertSame('USD', Money::dollar(1)->currency());
+        $this->assertSame('CHF', Money::franc(1)->currency());
     }
 
     public function testDifferentClassEquality()

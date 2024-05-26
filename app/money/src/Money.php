@@ -16,7 +16,12 @@ class Money
         $this->currency = $currency;
     }
 
-    public function equals(Money $object): bool
+    public function times(int $multiplier): self
+    {
+        return new self($this->amount * $multiplier, $this->currency());
+    }
+
+    public function equals(self $object): bool
     {
         return $this->amount === $object->amount
             && $this->currency() === $object->currency();
@@ -35,10 +40,5 @@ class Money
     public function currency(): string
     {
         return $this->currency;
-    }
-
-    public function times(int $multiplier): self
-    {
-        return null;
     }
 }

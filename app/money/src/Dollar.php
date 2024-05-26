@@ -6,9 +6,12 @@ namespace Money;
 
 class Dollar extends Money
 {
+    private string $currency;
+
     public function __construct(int $amount)
     {
         $this->amount = $amount;
+        $this->currency = 'USD';
     }
 
     public function times(int $multiplier): Money
@@ -18,6 +21,6 @@ class Dollar extends Money
 
     public function currency(): string
     {
-        return  'USD';
+        return  $this->currency;
     }
 }

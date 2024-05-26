@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Money;
 
-abstract class Money
+class Money
 {
     protected int $amount;
 
     protected string $currency;
-
-    abstract public function times(int $multiplier): self;
 
     public function __construct(int $amount, string $currency)
     {
@@ -18,10 +16,15 @@ abstract class Money
         $this->currency = $currency;
     }
 
-    public function equals(Money $object): bool
+    public function times(int $multiplier): self
+    {
+        return new self($this->amount * $multiplier, $this->currency());
+    }
+
+    public function equals(self $object): bool
     {
         return $this->amount === $object->amount
-            && get_class($this) === get_class($object);
+            && $this->currency() === $object->currency();
     }
 
     public static function dollar(int $amount): self

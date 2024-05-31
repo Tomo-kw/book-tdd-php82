@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Money;
 
-use Money\Franc;
+use Money\Bank;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 

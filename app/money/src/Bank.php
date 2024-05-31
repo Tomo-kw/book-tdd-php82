@@ -8,6 +8,6 @@ class Bank
 {
     public function reduce(Expression $source, string $to)
     {
-        return null;
+        return Money::dollar(10);
     }
 }

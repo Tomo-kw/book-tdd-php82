@@ -21,6 +21,16 @@ class Money implements Expression
         return new self($this->amount * $multiplier, $this->currency());
     }
 
+    public function currency(): string
+    {
+        return $this->currency;
+    }
+
+    public function plus(Money $addend): Expression
+    {
+        return new Money($this->amount + $addend->amount, $this->currency);
+    }
+
     public function equals(self $object): bool
     {
         return $this->amount === $object->amount
@@ -35,15 +45,5 @@ class Money implements Expression
     public static function franc(int $amount): self
     {
         return new Money($amount, 'CHF');
-    }
-
-    public function currency(): string
-    {
-        return $this->currency;
-    }
-
-    public function plus(Money $addend): Expression
-    {
-        return new Money($this->amount + $addend->amount, $this->currency);
     }
 }

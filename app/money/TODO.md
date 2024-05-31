@@ -14,3 +14,4 @@
 - [x] Franc と Dollar を比較する
 - [x] 通貨の概念
 - [x] testFrancMultiplication を削除する？
+- [ ] $5 + $5 = $10

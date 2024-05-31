@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Money;
 
-class Money
+class Money implements Expression
 {
     protected int $amount;
 
@@ -42,7 +42,7 @@ class Money
         return $this->currency;
     }
 
-    public function plus(Money $addend): self
+    public function plus(Money $addend): Expression
     {
         return new Money($this->amount + $addend->amount, $this->currency);
     }

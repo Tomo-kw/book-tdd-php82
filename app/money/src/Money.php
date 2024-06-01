@@ -6,7 +6,7 @@ namespace Money;
 
 class Money implements Expression
 {
-    protected int $amount;
+    public readonly int $amount;
 
     protected string $currency;
 

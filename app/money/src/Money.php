@@ -21,6 +21,11 @@ class Money implements Expression
         return new self($this->amount * $multiplier, $this->currency());
     }
 
+    public function reduce(string $to): Money
+    {
+        return $this;
+    }
+
     public function currency(): string
     {
         return $this->currency;

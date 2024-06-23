@@ -6,7 +6,7 @@ namespace Money;
 
 class Money implements Expression
 {
-    protected int $amount;
+    public readonly int $amount;
 
     protected string $currency;
 
@@ -21,14 +21,19 @@ class Money implements Expression
         return new self($this->amount * $multiplier, $this->currency());
     }
 
+    public function reduce(string $to): Money
+    {
+        return $this;
+    }
+
     public function currency(): string
     {
         return $this->currency;
     }
 
-    public function plus(Money $addend): Expression
+    public function plus(Money $addend): Sum
     {
-        return new Money($this->amount + $addend->amount, $this->currency);
+        return new Sum($this, $addend);
     }
 
     public function equals(self $object): bool

@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Money;
 
+// 特定の通貨と金額を管理し、それに対する算術演算や等価性比較を提供するクラス
 class Money implements Expression
 {
     public readonly int $amount;
 
+    // 通貨
     protected string $currency;
 
     public function __construct(int $amount, string $currency)

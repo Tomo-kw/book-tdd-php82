@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Money;
 
+// 通貨の加算を表すクラス
 class Sum implements Expression
 {
     public Money $augend;

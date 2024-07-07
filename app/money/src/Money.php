@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Money;
 
+// 特定の通貨と金額を管理し、それに対する算術演算や等価性比較を提供するクラス
 class Money implements Expression
 {
     public readonly int $amount;
 
+    // 通貨
     protected string $currency;
 
     public function __construct(int $amount, string $currency)
@@ -21,9 +23,10 @@ class Money implements Expression
         return new self($this->amount * $multiplier, $this->currency());
     }
 
-    public function reduce(string $to): Money
+    public function reduce(Bank $bank, string $to): Money
     {
-        return $this;
+        $rate = $bank->rate($this->currency, $to);
+        return new Money($this->amount / $rate, $to);
     }
 
     public function currency(): string

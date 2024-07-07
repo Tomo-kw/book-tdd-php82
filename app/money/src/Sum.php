@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Money;
 
+// 通貨の加算を表すクラス
 class Sum implements Expression
 {
     public Money $augend;
@@ -15,7 +16,7 @@ class Sum implements Expression
         $this->addend = $addend;
     }
 
-    public function reduce(string $to): Money
+    public function reduce(Bank $bank, string $to): Money
     {
         $amount = $this->augend->amount + $this->addend->amount;
         return new Money($amount, $to);

@@ -7,13 +7,19 @@ namespace Money;
 // 通貨の加算を表すクラス
 class Sum implements Expression
 {
-    public Money $augend;
-    public Money $addend;
+    // 被加数
+    public Expression $augend;
+    public Expression $addend;
 
-    public function __construct(Money $augend, Money $addend)
+    public function __construct(Expression $augend, Expression $addend)
     {
         $this->augend = $augend;
         $this->addend = $addend;
+    }
+
+    public function plus(Expression $addend): Expression
+    {
+        return null;
     }
 
     public function reduce(Bank $bank, string $to): Money

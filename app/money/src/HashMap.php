@@ -15,7 +15,7 @@ class HashMap
         $this->values[$pair->hashCode()] = $rate;
     }
 
-    public function get(Pair $pair)
+    public function get(Pair $pair): int
     {
         return $this->values[$pair->hashCode()];
     }

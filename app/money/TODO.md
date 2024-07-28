@@ -4,6 +4,7 @@
 - [x] Bank.reduce(Money)
 - [x] Money を変換して換算を行う
 - [x] Reduce(Bank, String)
+- [x] Sum.plus
 - [x] $5 * 2 = $10
 - [x] amount を private にする
 - [x] Dollar の副作用をどうする？

@@ -18,7 +18,13 @@ final class FibonacciTest extends TestCase
     }
     public function testFibonacci()
     {
-        $this->assertEquals(0, $this->fib(0));
-        $this->assertEquals(1, $this->fib(1));
+        // [入力値, 期待される結果] のペア
+        $cases = [
+            [0, 0],[1,1]
+        ];
+
+        for ($i = 0; $i < count($cases); $i++) {
+            $this->assertEquals($cases[$i][1], $this->fib($cases[$i][0]));
+        }
     }
 }
